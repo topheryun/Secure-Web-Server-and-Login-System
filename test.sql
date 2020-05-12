@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS `t_user` ( 
+  `id` int(11) NOT NULL AUTO_INCREMENT, 
+  `username` varchar(30) NOT NULL COMMENT '用户名',
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `birthdate` varchar(12) NOT NULL, 
+  `password` varchar(64) NOT NULL COMMENT '密码', 
+  `email` varchar(30) NOT NULL COMMENT '邮箱', 
+  `token` varchar(50) NOT NULL COMMENT '帐号激活码', 
+  `token_exptime` int(10) NOT NULL COMMENT '激活码有效期', 
+  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态,0-未激活,1-已激活', 
+  `login_times` int(10) NOT NULL DEFAULT '0' COMMENT '登录次数',
+  `last_login_date` varchar(24) NOT NULL DEFAULT 'No last login date.' COMMENT '上次登录时间',
+  `regtime` int(10) NOT NULL COMMENT '注册时间', 
+  `secure_question_1` varchar(50) NOT NULL,
+  `secure_question_1_answer` varchar(30) NOT NULL,
+  `secure_question_2` varchar(50) NOT NULL,
+  `secure_question_2_answer` varchar(30) NOT NULL,
+  `secure_question_3` varchar(50) NOT NULL,
+  `secure_question_3_answer` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`) 
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8; 
